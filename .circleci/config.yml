@@ -7,7 +7,7 @@ jobs:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      - import: build.yml
+  - import: build.yml
       #- run: python3 python_project/main.py
   test:
     #working_directory: ~/circleci-python
@@ -15,7 +15,7 @@ jobs:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      - import: test.yml
+  - import: test.yml
 
 workflows:
   build_and_test:
