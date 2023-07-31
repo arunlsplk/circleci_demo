@@ -12,7 +12,7 @@ jobs:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      <<: *build_step
+    <<: *build_step
       #- run: python3 python_project/main.py
   test:
     #working_directory: ~/circleci-python
@@ -20,7 +20,7 @@ jobs:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      <<: *test_step
+    <<: *test_step
 
 workflows:
   build_and_test:
