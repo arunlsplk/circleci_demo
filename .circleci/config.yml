@@ -1,13 +1,13 @@
 version: 2.1
 
-build: &build_step
-  run:
-    name: build project
-    command: python3 python_project/main.py
-test: &test_step
-  run:
-    name: test project
-    command: python3 python_project/main_test.py
+#build: &build_step
+#  run:
+#    name: build project
+#    command: python3 python_project/main.py
+#test: &test_step
+#  run:
+#    name: test project
+#    command: python3 python_project/main_test.py
 
 jobs:
   build:
