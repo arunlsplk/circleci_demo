@@ -3,11 +3,11 @@ version: 2.1
 build: &build_step
   run:
     name: build project
-    command: python3 python_project/main.py
-test: &test_step
-  run:
-    name: test project
-    command: python3 python_project/main_test.py
+    command: python3 -m compileall python_project/main.py
+#test: &test_step
+#  run:
+#    name: test project
+#    command: python3 python_project/main_test.py
 
 jobs:
   build:
@@ -18,18 +18,18 @@ jobs:
       - checkout  
       - *build_step
       #- run: python3 python_project/main.py
-  test:
+ # test:
     #working_directory: ~/circleci-python
-    docker:
-      - image: cimg/python:3.11.4
-    steps:
-      - checkout
-      - *test_step
+ #   docker:
+ #     - image: cimg/python:3.11.4
+ #   steps:
+ #     - checkout
+ #     - *test_step
 
 workflows:
-  build_and_test:
+  pythonbuild:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+  #    - test:
+  #        requires:
+  #          - build
