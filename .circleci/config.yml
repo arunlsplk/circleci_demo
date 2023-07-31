@@ -1,5 +1,11 @@
 version: 2.1
 
+anchors: 
+  - &build_step
+    run: python3 python_project/main.py
+  - &test_step
+    run: python3 python_project/main_test.py
+
 jobs:
   build:
     #working_directory: ~/circleci-python
