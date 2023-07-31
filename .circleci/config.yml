@@ -1,9 +1,9 @@
 version: 2.1
 
 build_step: &build_step
-    run: python3 python_project/main.py
+  run: python3 python_project/main.py
 test_step: &test_step
-    run: python3 python_project/main_test.py
+  run: python3 python_project/main_test.py
 
 jobs:
   build:
