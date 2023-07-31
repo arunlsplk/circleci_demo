@@ -7,14 +7,15 @@ jobs:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      - run: python3 python_project/main.py
+      - import: build.yml
+      #- run: python3 python_project/main.py
   test:
     #working_directory: ~/circleci-python
     docker:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      - run: python3 python_project/main_test.py
+      - import: test.yml
 
 workflows:
   build_and_test:
