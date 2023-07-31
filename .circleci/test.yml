@@ -1,2 +1,2 @@
-steps: &test
+steps: &test_step
   - run: python3 python_project/main_test.py

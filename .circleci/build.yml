@@ -1,2 +1,2 @@
-steps: &build
+steps: &build_step
   - run: python3 python_project/main.py
