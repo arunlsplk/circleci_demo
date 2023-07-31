@@ -1,1 +1,2 @@
-- run: python3 python_project/main_test.py
+steps: &test
+  - run: python3 python_project/main_test.py
