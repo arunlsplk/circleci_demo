@@ -18,7 +18,7 @@ jobs:
       - checkout  
       - *build_step
       - store_artifacts:
-          path: --pycache--/tmp
+          path: /tmp
 
 workflows:
   pythonbuild:
