@@ -3,7 +3,7 @@ version: 2.1
 build: &build_step
   run:
     name: build project
-    command: python3 -m compileall python_project/.
+    command: pyc python3 -m compileall python_project/.
 #test: &test_step
 #  run:
 #    name: test project
@@ -13,7 +13,7 @@ jobs:
   build:
     #working_directory: ~/circleci-python
     docker:
-      - image: circleci/python:3.8
+      - image: cimg/python:3.11.4
     steps:
       - checkout  
       - *build_step
