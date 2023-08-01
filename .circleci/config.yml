@@ -3,7 +3,7 @@ version: 2.1
 build: &build_step
   run:
     name: build project
-    command: python3 -m compileall python_project/main_test.py python_project/sample.py
+    command: python3 -m compileall python_project/main_test.py python_project/sample.py python_project/main.py
 #test: &test_step
 #  run:
 #    name: test project
