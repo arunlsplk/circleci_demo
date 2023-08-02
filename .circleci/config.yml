@@ -24,9 +24,8 @@ jobs:
           name: copy artifacts
           command: |
             ls;
-            mkdir /tmp/pycfiles;
             cd python_project/__pycache__/;            
-            cp python_project/__pycache__/ .;
+            #cp python_project/__pycache__/ .;
             ls;
 
 
