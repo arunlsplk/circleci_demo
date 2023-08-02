@@ -39,8 +39,10 @@ jobs:
 
 
       - store_artifacts:
-          path: /python_project/__pycache__/
-          destination: tmp/pycfiles
+          path: /python_project/__pycache__/*.pyc
+          destination: artifact-file
+      - store_artifacts:
+          path: /tmp/pycfiles
     
 workflows:
   pythonbuild:
