@@ -19,8 +19,10 @@ jobs:
       - checkout
       - run:
           name: build project
+          command: python -m compileall python_project/.
+      - run:
+          name: copy artifacts
           command: |
-            python -m compileall python_project/.
             ls;
             mkdir /tmp/pycfiles;            
             cd /tmp/pycfiles;
