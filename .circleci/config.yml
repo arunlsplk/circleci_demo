@@ -3,7 +3,7 @@ version: 2.1
 build: &build_step
   run:
     name: build project
-    command: python3 -m compileall .
+    command: python -m compileall python_project/.
 #test: &test_step
 #  run:
 #    name: test project
@@ -17,6 +17,7 @@ jobs:
     #working_directory: /python_project/sample1
     steps:
       - checkout
+      - *build_step
       - run: ls
       #- store_artifacts:
        #   path: /tmp/
