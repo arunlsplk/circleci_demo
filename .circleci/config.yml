@@ -24,6 +24,9 @@ jobs:
           name: copy artifacts
           command: |
             ls;
+            cd python_project/__pycache__/;
+            pwd;
+            cd ../..;
             mkdir tmp/pycfiles;
             cd tmp/pycfiles;
             touch test.py;
