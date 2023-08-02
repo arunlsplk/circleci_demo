@@ -21,7 +21,9 @@ jobs:
           name: build project
           command: |
             python -m compileall python_project/.;
-            mkdir -p tmp/pycfiles;
+            mkdir tmp/pycfiles;
+            cd tmp/pycfiles;
+            ls
             cd python_project/__pycache__;
             ls
             cp -R .* ~/tmp/pycfiles/
