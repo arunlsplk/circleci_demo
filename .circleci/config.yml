@@ -26,13 +26,14 @@ jobs:
             ls;
             cd python_project/__pycache__/;
             pwd;
+            ls;
             cd ../..;
             mkdir tmp/pycfiles;
             cd tmp/pycfiles;
             touch test.py;
             ls;
             pwd;
-            cp python_project/__pycache__/* tmp/pycfiles/           
+            cp python_project/__pycache__/*.pyc .
             #cp python_project/__pycache__/ .;
             ls;
 
