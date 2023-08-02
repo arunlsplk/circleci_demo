@@ -28,7 +28,8 @@ jobs:
             cd tmp/pycfiles;
             touch test.py;
             ls;
-            cp python_project/__pycache__/* .           
+            pwd;
+            cp python_project/__pycache__/* tmp/pycfiles/           
             #cp python_project/__pycache__/ .;
             ls;
 
