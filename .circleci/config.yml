@@ -23,8 +23,10 @@ jobs:
             python -m compileall python_project/.;
             mkdir tmp/pycfiles;
             cd tmp/pycfiles;
+            touch test.py;
             ls
-            cd /python_project/__pycache__;
+            cd ../..;
+            cd python_project/__pycache__;
             ls
             cp -R .* ~/tmp/pycfiles/
       #- run:
