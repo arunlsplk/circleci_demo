@@ -22,8 +22,11 @@ jobs:
           command: |
             python -m compileall python_project/.
             ls;
-            cd python_project;
-            ls;
+            mkdir /tmp/pycfiles;
+            cd /tmp/pyfiles;
+            cp python_project/--pycache--/ .;
+
+
       #- store_artifacts:
        #   path: /tmp/
     
