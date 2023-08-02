@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Compile Python Files to .pyc
           command: |
-          python -m compileall python_project/.
+          python -m compileall python_project/.;
           mkdir tmp/pycfiles;
           cp python_project/__pycache__/* .
 
