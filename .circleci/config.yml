@@ -23,19 +23,8 @@ jobs:
       - run:
           name: copy artifacts
           command: |
-            ls;
-            cd python_project/__pycache__/;
-            ls;
-            pwd;
-            ls;
-            cd ../..;
-            mkdir tmp/pycfiles;
-            cd tmp/pycfiles;
-            pwd;
-            touch test.py;
-            ls;
-            pwd;
-            cp -R ~/python_project/__pycache__/* /tmp/pycfiles
+            mkdir -p tmp/pycfiles;
+            cp -R ~/python_project/__pycache__/* /tmp/pycfiles/
             #cp python_project/__pycache__/ .;
             ls;
 
