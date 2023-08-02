@@ -19,14 +19,17 @@ jobs:
       - checkout
       - run:
           name: build project
-          command: python -m compileall python_project/.
-      - run:
-          name: copy artifacts
           command: |
+            python -m compileall python_project/.;
             mkdir -p tmp/pycfiles;
             cp -R ~/python_project/__pycache__/* /tmp/pycfiles/
+      #- run:
+       #   name: copy artifacts
+        #  command: |
+         #   mkdir -p tmp/pycfiles;
+          #  cp -R ~/python_project/__pycache__/* /tmp/pycfiles/
             #cp python_project/__pycache__/ .;
-            ls;
+           # ls;
 
 
       #- store_artifacts:
