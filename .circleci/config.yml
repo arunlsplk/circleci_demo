@@ -22,7 +22,9 @@ jobs:
           command: |
             python -m compileall python_project/.;
             mkdir -p tmp/pycfiles;
-            cp -R ~/python_project/__pycache__/* /tmp/pycfiles/
+            cd python_project/__pycache__;
+            ls
+            cp -R .* /tmp/pycfiles/
       #- run:
        #   name: copy artifacts
         #  command: |
