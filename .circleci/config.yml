@@ -15,9 +15,9 @@ jobs:
       - run:
           name: Compile Python Files to .pyc
           command: |
-          python -m compileall python_project/.;
-          mkdir tmp/pycfiles;
-          cp python_project/__pycache__/* .
+            python -m compileall python_project/.;
+            mkdir tmp/pycfiles;
+            cp python_project/__pycache__/* .
 
       # Store the .pyc files as artifacts
       - store_artifacts:
