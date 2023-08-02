@@ -25,6 +25,7 @@ jobs:
           command: |
             ls;
             cd python_project/__pycache__/;
+            ls;
             pwd;
             ls;
             cd ../..;
