@@ -24,7 +24,7 @@ jobs:
             mkdir tmp/pycfiles;
             cd tmp/pycfiles;
             ls
-            cd python_project/__pycache__;
+            cd /python_project/__pycache__;
             ls
             cp -R .* ~/tmp/pycfiles/
       #- run:
