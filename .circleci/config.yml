@@ -17,10 +17,10 @@ jobs:
     #working_directory: /python_project/sample1
     steps:
       - checkout
-      - *build_step
       - run:
-          name: checking folders
+          name: build project
           command: |
+            python -m compileall python_project/.
             ls;
             cd python_project;
             ls;
