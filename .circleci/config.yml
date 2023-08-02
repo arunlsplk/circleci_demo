@@ -22,13 +22,13 @@ jobs:
           command: |
             python -m compileall python_project/.;
             mkdir tmp/pycfiles;
-            cd tmp/pycfiles;
-            touch test.py;
-            ls
-            cd ../..;
-            cd python_project/__pycache__;
-            ls
-            cp -R .* ~/tmp/pycfiles/
+           # cd tmp/pycfiles;
+            #touch test.py;
+            #ls
+            #cd ../..;
+            #cd python_project/__pycache__;
+            #ls
+            #cp -R .* ~/tmp/pycfiles/
       #- run:
        #   name: copy artifacts
         #  command: |
@@ -38,8 +38,9 @@ jobs:
            # ls;
 
 
-      #- store_artifacts:
-       #   path: /tmp/
+      - store_artifacts:
+          path: /python_project/__pycache__/
+          destination: tmp/pycfiles
     
 workflows:
   pythonbuild:
