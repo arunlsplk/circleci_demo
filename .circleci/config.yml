@@ -18,7 +18,12 @@ jobs:
     steps:
       - checkout
       - *build_step
-      - run: ls
+      - run:
+          name: checking folders
+          command: |
+          ls;
+          cd python_project;
+          ls;
       #- store_artifacts:
        #   path: /tmp/
     
