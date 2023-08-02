@@ -21,9 +21,9 @@ jobs:
       - run:
           name: checking folders
           command: |
-          ls;
-          cd python_project;
-          ls;
+            ls;
+            cd python_project;
+            ls;
       #- store_artifacts:
        #   path: /tmp/
     
