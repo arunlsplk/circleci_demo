@@ -23,8 +23,8 @@ jobs:
             python -m compileall python_project/.
             ls;
             mkdir /tmp/pycfiles;
-            cd /tmp/pyfiles;
-            cp python_project/--pycache--/ .;
+            cd /tmp;
+            ls;
 
 
       #- store_artifacts:
