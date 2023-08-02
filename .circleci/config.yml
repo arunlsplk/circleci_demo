@@ -31,6 +31,7 @@ jobs:
             cd ../..;
             mkdir tmp/pycfiles;
             cd tmp/pycfiles;
+            pwd;
             touch test.py;
             ls;
             pwd;
