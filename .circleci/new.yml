@@ -1,0 +1,50 @@
+version: 2.1
+
+build: &build_step
+  run:
+    name: build project
+    command: python -m compileall python_project/.
+#test: &test_step
+#  run:
+#    name: test project
+#    command: python3 python_project/main_test.py
+
+jobs:
+  build:
+    #working_directory: ~/circleci-python
+    docker:
+      - image: cimg/python:3.11.4
+    #working_directory: /python_project/sample1
+    steps:
+      - checkout
+      - run:
+          name: build project
+          command: |
+            python -m compileall python_project/.;
+            mkdir tmp/pycfiles;
+           # cd tmp/pycfiles;
+            #touch test.py;
+            #ls
+            #cd ../..;
+            #cd python_project/__pycache__;
+            #ls
+            #cp -R .* ~/tmp/pycfiles/
+      #- run:
+       #   name: copy artifacts
+        #  command: |
+         #   mkdir -p tmp/pycfiles;
+          #  cp -R ~/python_project/__pycache__/* /tmp/pycfiles/
+            #cp python_project/__pycache__/ .;
+           # ls;
+
+
+      - store_artifacts:
+          path: /python_project/__pycache__
+    
+workflows:
+  pythonbuild:
+    jobs:
+      - build
+  #    - test:
+  #        requires:
+  #          - build
