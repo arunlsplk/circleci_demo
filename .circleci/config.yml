@@ -14,10 +14,11 @@ jobs:
     #working_directory: ~/circleci-python
     docker:
       - image: cimg/python:3.11.4
-    working_directory: /tmp
+    #working_directory: /tmp
     steps:
       - checkout
       - *build_step
+      - run: ls
       - store_artifacts:
           path: /tmp/
     
