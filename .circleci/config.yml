@@ -18,9 +18,9 @@ jobs:
             python -m compileall python_project/.;
             mkdir tmp/pycfiles;
           
-          - store_artifacts:
-              path: python_project/sample1/__pycache__  # Replace with the correct path to the __pycache__ directory
-              destination: tmp/pycfiles
+      - store_artifacts:
+          path: python_project/sample1/__pycache__  # Replace with the correct path to the __pycache__ directory
+          destination: tmp/pycfiles
 
       # Store the .pyc files as artifacts
       
