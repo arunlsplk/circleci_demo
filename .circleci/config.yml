@@ -17,6 +17,7 @@ jobs:
           command: |
             python -m compileall python_project/.;
             mkdir tmp/pycfiles;
+            cp python_project/__pycache__/.* .;
 
       # Store the .pyc files as artifacts
       
