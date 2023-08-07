@@ -51,8 +51,6 @@ jobs:
             arunl
             Splk#vlr@123
             EOF
-            echo "Uploaded package to TestPyPI";
-
 workflows:
   build_workflow:
     jobs:
