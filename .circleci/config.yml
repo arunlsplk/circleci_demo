@@ -50,7 +50,7 @@ jobs:
             python3 -m twine upload --repository testpypi python_project/python_package/dist/* <<EOF
             arunl
             Splk#vlr@123
-            EOF
+            EOF;
             echo "Uploaded package to TestPyPI";
 
 workflows:
