@@ -34,7 +34,7 @@ jobs:
             cd python_project/python_package;
             ls;
             python3 -m pip install --upgrade build;
-            python.exe -m pip install --upgrade pip;
+            python3 -m pip install --upgrade pip;
             python3 -m build;
             cd dist;
             ls;
