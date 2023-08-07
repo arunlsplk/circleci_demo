@@ -23,8 +23,28 @@ jobs:
 
       # Store the .pyc files as artifacts
       
+  python_package:
+    docker:
+      - image: cimg/python:3.11.4
+    steps:
+      - checkout
+      - run:
+          name: Generating distribution archives
+          command: |
+          cd python_project/python_package;
+          ls;
+          python3 -m pip install --upgrade build;
+          ls;
+      - run:
+          name: uploading distribution events
+          command: |
+          python3 -m pip install --upgrade twine;
+          python3 -m twine upload --repository testpypi dist/*;
+          echo "Uploaded package to TestPyPI";
 
 workflows:
   build_workflow:
     jobs:
       - build
+    jobs:
+      - python_package
