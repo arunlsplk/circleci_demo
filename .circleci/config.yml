@@ -34,6 +34,7 @@ jobs:
             cd python_project/python_package;
             ls;
             python3 -m pip install --upgrade build;
+            cd dist;
             ls;
       - run:
           name: uploading distribution events
