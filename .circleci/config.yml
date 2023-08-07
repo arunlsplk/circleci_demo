@@ -47,7 +47,7 @@ jobs:
             python3 -m pip install --upgrade twine;
             echo "testing";
             ls;
-            python3 -m twine upload --repository testpypi ./dist/* << EOF
+            python3 -m twine upload --repository testpypi ./dist/* \<< EOF
             arunl
             Splk#vlr@123
             EOF
