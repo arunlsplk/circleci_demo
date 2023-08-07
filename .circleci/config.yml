@@ -47,7 +47,7 @@ jobs:
             python3 -m pip install --upgrade twine;
             echo "testing";
             ls;
-            python3 -m twine upload --repository testpypi python_project/python_package/dist/* < testpypi.txt;
+            python3 -m twine upload --repository testpypi python_project/python_package/dist/* < /python_project/python_pacakge/testpypi.txt;
             echo "Uploaded package to TestPyPI";
 
 workflows:
