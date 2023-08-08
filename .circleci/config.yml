@@ -36,18 +36,26 @@ jobs:
             python3 -m pip install --upgrade build;
             python3 -m pip install --upgrade pip;
             python3 -m build;
-            ls;
             cd dist;
             ls;
       - run:
-          name: uploading distribution events
+          name: Install JFrog CLI
+          command: curl -fL https://getcli.jfrog.io | sh
+
+      - run:
+          name: push to Artifactory
           command: |
-            pwd; 
-            ls;
-            python3 -m pip install --upgrade twine;
-            echo "testing";
-            ls;
-            python3 -m twine upload --repository testpypi python_project/python_package/dist/* --username arunl --password Splk#vlr@123;
+            ./jfrog config add <named_server_config> --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --password $ARTIFACTORY_PASSWORD --interactive=false;
+            echo "config done";
+      #- run:
+       #   name: uploading distribution events
+        #  command: |
+         #   pwd; 
+          #  ls;
+           # python3 -m pip install --upgrade twine;
+            #echo "testing";
+            #ls;
+            #python3 -m twine upload --repository testpypi python_project/python_package/dist/* --username arunl --password Splk#vlr@123;
             
 workflows:
   build_workflow:
