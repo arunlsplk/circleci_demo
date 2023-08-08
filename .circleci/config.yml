@@ -45,7 +45,7 @@ jobs:
       - run:
           name: push to Artifactory
           command: |
-            ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user arunlsplunk@gmail.com --password Splkvlr@1 --interactive=false;
+            ./jfrog config add arsoft.jfrog.io --artifactory-url https://arsoft.jfrog.io/artifactory/pypi/ --user arunlsplunk@gmail.com --password Splkvlr@1 --interactive=false;
             echo "config done";
       #- run:
        #   name: uploading distribution events
