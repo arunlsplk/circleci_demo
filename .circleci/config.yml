@@ -46,6 +46,7 @@ jobs:
           name: push to Artifactory
           command: |
             ./jfrog config add arsoft.jfrog.io --artifactory-url https://arsoft.jfrog.io/artifactory/pypi/ --user arunlsplunk@gmail.com --password Splkvlr@1 --interactive=false;
+            ./jfrog rt u python_project/python_package/dist/ pypi --build-name=testupload --build-number=1.0.0;
             echo "config done";
       #- run:
        #   name: uploading distribution events
