@@ -45,7 +45,7 @@ jobs:
       - run:
           name: push to Artifactory
           command: |
-            ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --apikey $ARTIFACTORY_APIKEY --interactive=true
+            ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --apikey $ARTIFACTORY_APIKEY
             ./jfrog rt u python_project/python_package/dist/ pypi --build-name=testupload --build-number=1.0.0;
             echo "config done";
       #- run:
