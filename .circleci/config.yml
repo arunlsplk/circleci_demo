@@ -32,6 +32,7 @@ jobs:
           command: |
             echo "my artifact file" > /tmp/artifact-1;
             mkdir /tmp/artifacts;
+            mkdir /tmp/jfog;
             echo "my artifact files in a dir" > /tmp/artifacts/artifacts-2;
       - store_artifacts:
           path: /tmp/artifact-1
