@@ -55,12 +55,49 @@ jobs:
           command: |
             ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user arunl --enc-password=false --access-token=$ARTIFACTORY_TOKEN
             ./jfrog rt u artifacts/ pypi --build-name=testupload --build-number=1.0.1
+
+  python_package:
+    docker:
+      - image: cimg/python:3.11.4
+    steps:
+      - checkout
+      - run:
+          name: Generating distribution archives
+          command: |
+            cd python_project/python_package;
+            ls;
+            python3 -m pip install --upgrade build;
+            python3 -m pip install --upgrade pip;
+            python3 -m build;
+            cd dist;
+            ls;
+      - run:
+          name: Install JFrog CLI
+          command: curl -fL https://getcli.jfrog.io | sh
+
+      - run:
+          name: push to Artifactory
+          command: |
+            ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user arunl --enc-password=false --access-token=$ARTIFACTORY_TOKEN
+            ./jfrog rt u python_project/python_package/dist/ pypi --build-name=testupload --build-number=1.0.0
+            #./jfrog rt bce testupload 1.0.0 
+            #./jfrog rt bp testupload 1.0.0 
+  
+      #- run:
+       #   name: uploading distribution events
+        #  command: |
+         #   pwd; /?
+           # python3 -m pip install --upgrade twine;
+            #echo "testing";
+            #ls;
+            #python3 -m twine upload --repository testpypi python_project/python_package/dist/* --username arunl --password Splk#vlr@123;
+          
               
 workflows:
   build_workflow:
     jobs:
       - build
-     # - python_package
+      - python_package
   dummy-artifactory:
     jobs:
       - dummy-artifactory
