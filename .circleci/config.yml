@@ -45,7 +45,7 @@ jobs:
       - run:
           name: push to Artifactory
           command: |
-            ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --enc-password=false --access-token=$ARTIFACTORY_TOKEN
+            ./jfrog config add arsoft.jfrog.io --artifactory-url $ARTIFACTORY_URL --user arunl --enc-password=false --access-token=$ARTIFACTORY_TOKEN
             ./jfrog rt u python_project/python_package/dist/ pypi --build-name=testupload --build-number=1.0.0
             ./jfrog rt bce testupload 1.0.0 
             ./jfrog rt bp testupload 1.0.0 
