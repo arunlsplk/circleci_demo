@@ -41,7 +41,7 @@ jobs:
 workflows:
   javabuild:
     jobs:
-      - build:
+      - python_package:
           filters:
             branches:
               only:
