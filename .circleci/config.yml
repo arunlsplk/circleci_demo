@@ -74,6 +74,11 @@ jobs:
           name: checking jdk version
           command: java --version
 
+parameters:
+  run-schedule:
+    type: boolean
+    default: false
+
 
               
 workflows:
@@ -94,11 +99,8 @@ workflows:
     when: << pipeline.parameters.run-schedule >>
     jobs:
       - build-new
+##
 
-parameters:
-  run-schedule:
-    type: boolean
-    default: false
   
 
 
