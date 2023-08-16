@@ -92,8 +92,6 @@ workflows:
               only:
                 - dev
   build-test-deploy:
-    when:
-      not: << pipeline.parameters.run-schedule >>
     jobs:
       - test
 
