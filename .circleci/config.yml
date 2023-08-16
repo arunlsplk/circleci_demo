@@ -96,7 +96,8 @@ workflows:
       - test
 
   daily-run-workflow:
-    when: << pipeline.parameters.run-schedule >>
+    when: 
+      not: << pipeline.parameters.run-schedule >>
     jobs:
       - build-new
 ##
