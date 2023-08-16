@@ -63,7 +63,9 @@ jobs:
       - checkout
       - run:
           name: checking jdk version
-          command: java --version
+          command: |
+            java --version;
+            echo "Testing";
 
   build-new:
     docker:
