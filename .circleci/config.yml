@@ -90,7 +90,7 @@ workflows:
     jobs:
       - test
 
-  nightly-snapshot:
+  daily-run-workflow:
     when: << pipeline.parameters.run-schedule >>
     jobs:
       - build-new
